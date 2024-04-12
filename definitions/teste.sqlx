@@ -1,0 +1,10 @@
+config {
+    type: "view"
+}
+
+SELECT
+  *
+FROM
+  `crm-sams.SCS.MEMBERSHIP_REGISTRATION`
+LIMIT
+  10

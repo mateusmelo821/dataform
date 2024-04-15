@@ -1,0 +1,27 @@
+config {
+    type: "table"
+}
+
+SELECT
+  *
+FROM (
+  SELECT
+    *
+  FROM
+    `crm-sams.SCS.MEMBERSHIP_REGISTRATION`
+  WHERE
+    CPF IS NULL
+  LIMIT
+    50 ) AUX
+UNION ALL
+SELECT
+  *
+FROM (
+  SELECT
+    *
+  FROM
+    `crm-sams.SCS.MEMBERSHIP_REGISTRATION`
+  WHERE
+    CPF IS NOT NULL
+  LIMIT
+    50)

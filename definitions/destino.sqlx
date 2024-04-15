@@ -1,0 +1,10 @@
+config {
+    type: "table"
+}
+
+SELECT
+  *
+FROM
+  ${ref("origem")}
+WHERE
+  CPF IS NOT NULL

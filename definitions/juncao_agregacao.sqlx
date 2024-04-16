@@ -1,0 +1,19 @@
+config {
+    type: "table"
+}
+
+SELECT
+  CONCAT(clientes.FIRSTNAME, ' ', clientes.LASTNAME) AS CLIENTE,
+  clientes.CPF,
+  compras.VISIT_DATE AS DATA_VENDA,
+  SUM(TOTAL_SALES_NBR) AS VALOR_VENDA
+FROM
+  ${ref("clientes")} AS clientes
+JOIN
+  ${ref("compras")} AS compras
+ON
+  clientes.CPF = compras.CPF
+GROUP BY
+  1,
+  2,
+  3

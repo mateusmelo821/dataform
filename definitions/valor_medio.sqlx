@@ -1,0 +1,11 @@
+config {
+    type: "table"
+}
+
+SELECT
+  DATA_VENDA,
+  AVG(VALOR_VENDA) AS VENDA_MEDIA
+FROM
+  ${ref("juncao_agregacao")}
+GROUP BY
+  1

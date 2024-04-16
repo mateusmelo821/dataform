@@ -1,0 +1,11 @@
+config {
+    type: "table"
+}
+
+SELECT
+  DATA_VENDA,
+  SUM(VALOR_VENDA) AS VENDA_TOTAL
+FROM
+  ${ref("juncao_agregacao")}
+GROUP BY
+  1

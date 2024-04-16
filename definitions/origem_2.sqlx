@@ -1,0 +1,9 @@
+config { 
+    type: "table",
+    name: "compras"
+
+ }
+
+SELECT * FROM `crm-sams.MMBRSHP_SNAPSHOT.TBL_ANALYTICS_SAMS_CUSTOMER_ACCOUNTING_DATA_STG` 
+WHERE STORE_UF = 'PE' 
+AND VISIT_DATE > '2024-04-10'

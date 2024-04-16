@@ -1,0 +1,11 @@
+config {
+    type: "table",
+    name: "clientes"
+}
+
+SELECT
+  *
+FROM
+  `crm-sams.SCS.MEMBERSHIP_REGISTRATION`
+WHERE
+  STATE = 'PE' QUALIFY ROW_NUMBER() OVER (PARTITION BY CPF ORDER BY DATACRIACAO) = 1

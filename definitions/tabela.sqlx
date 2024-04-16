@@ -1,0 +1,15 @@
+config { 
+    type: "table",
+    name: "compras",
+    assertions: {
+    rowConditions: [
+      'TOTAL_SALES_NBR > 0',
+      'TOTAL_ITEMS_NBR > 0',
+    ]
+  }
+
+ }
+
+SELECT * FROM `crm-sams.MMBRSHP_SNAPSHOT.TBL_ANALYTICS_SAMS_CUSTOMER_ACCOUNTING_DATA_STG` 
+WHERE STORE_UF = 'PE' 
+AND VISIT_DATE > '2024-04-10'

@@ -1,0 +1,13 @@
+config {
+    type: "assertion"
+}
+
+SELECT
+  *
+FROM
+  ${ref("compras")}
+WHERE
+  FIRSTNAME IS NULL
+
+OR 
+LENGTH(FIRSTNAME) <= 2
